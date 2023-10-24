@@ -1,0 +1,12 @@
+<div class="sidebar">
+    <div
+      class="note"
+      *ngFor="let note of notesService.notes"
+      [class.active]="note.id === selectedNoteId"
+      [routerLink]="['note/', note.id]"
+      (click)="selectedNote(note.id!)"
+    >
+     <h4>{{ note.title }}</h4>
+    </div>
+  <button  class="add-button" (click)="addNote()">Добавить новую  заметку</button>
+</div>
